@@ -4,6 +4,9 @@ Cartel Update Tool
 ## About
 This is a really simple tool. This is just for if you are too lazy to redownload the rar file in the discord server.
 
+## Downloads
+You can find pre-compiled downloads [here](https://github.com/cartelclient/CUT/releases/)
+
 ## Licensing 
 Permissions
 * ✔️ Commercial use
