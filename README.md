@@ -2,7 +2,10 @@
 Cartel Update Tool
 
 ## About
-This is a really simple tool. This is just for if you are too lazy to redownload the rar file in the discord server.
+This is a really simple tool. This just downloads the executable, rather than redownloading the rar file which contains the keybinds file and scripts folder
+
+## Instructions
+Drag CUT.exe into the same folder as cartel.exe, you are then ready to use the update tool
 
 ## Downloads
 You can find pre-compiled downloads [here](https://github.com/cartelclient/CUT/releases/)
