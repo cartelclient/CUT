@@ -9,6 +9,7 @@ Drag CUT.exe into the same folder as cartel.exe, you are then ready to use the u
 
 ## Downloads
 You can find pre-compiled downloads [here](https://github.com/cartelclient/CUT/releases/)
+You can download the source code [here](https://github.com/cartelclient/CUT/archive/refs/heads/main.zip)
 
 ## Licensing 
 Permissions
