@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace CUT.handler.console
 {
@@ -60,20 +61,22 @@ namespace CUT.handler.console
 
         public static void MoveWindowToCenter()
         {
-            IntPtr window = Process.GetCurrentProcess().MainWindowHandle;
-
-            if (window == IntPtr.Zero)
+            try
             {
-                throw new Exception("Couldn't find a window to center");
+                IntPtr window = Process.GetCurrentProcess().MainWindowHandle;
+
+                Size screenSize = GetScreenSize();
+                Size windowSize = GetWindowSize(window);
+
+                int x = (screenSize.Width - windowSize.Width) / 2;
+                int y = (screenSize.Height - windowSize.Height) / 2;
+
+                SetWindowPos(window, IntPtr.Zero, x, y, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
             }
+            catch (Exception ex)
+            {
 
-            Size screenSize = GetScreenSize();
-            Size windowSize = GetWindowSize(window);
-
-            int x = (screenSize.Width - windowSize.Width) / 2;
-            int y = (screenSize.Height - windowSize.Height) / 2;
-
-            SetWindowPos(window, IntPtr.Zero, x, y, 0, 0, SWP_NOSIZE | SWP_NOZORDER);
+            }
         }
 
         public static void centerText(string text)
