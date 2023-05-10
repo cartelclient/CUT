@@ -2,13 +2,10 @@
 Cartel Update Tool
 
 ## About
-This is a really simple tool. This just downloads the executable, rather than redownloading the rar file which contains the keybinds file and scripts folder
+This is a really simple tool. This just downloads the files for you instead of manually. This is because I will NOT be distrubuting on Discord anymore since I got banned.
 
 ## Staying up to date
-CUT gets its download links from a web api, so no matter where the download moves to, you will always be able to update!
-
-## Instructions
-Drag CUT.exe into the same folder as cartel.exe, you are then ready to use the update tool
+CUT gets its download links from a web api, so no matter where the download moves to, you should always have the latest downloads!
 
 ## Downloads
 You can find pre-compiled downloads [here](https://github.com/cartelclient/CUT/releases/)
