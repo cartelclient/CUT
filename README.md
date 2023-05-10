@@ -12,6 +12,9 @@ You can find pre-compiled downloads [here](https://github.com/cartelclient/CUT/r
 <br>
 You can download the source code [here](https://github.com/cartelclient/CUT/archive/refs/heads/main.zip)
 
+## Manually downloading cartel
+You can find all the download links [here](https://cartelclient.github.io/API/CUT.json)
+
 ## Licensing 
 Permissions
 * ✔️ Commercial use
