@@ -22,6 +22,7 @@ namespace CUT
             consoleWriter.writeLogo();
             Console.WriteLine("");
 
+            consoleWriter.optionsWriter("Choose for me");
             consoleWriter.optionsWriter("Download cartel (rar)");
             consoleWriter.optionsWriter("Download cartel (signed rar)");
             consoleWriter.optionsWriter("Download cartel (executable only)");
@@ -31,6 +32,14 @@ namespace CUT
             switch (input)
             {
                 case "1":
+                    Console.Clear();
+                    threadManager.createThread(webClient.serverDownloadUnsignedRar);
+                    Console.WriteLine("Downloading cartel from server. Press any key to continue");
+                    Console.ReadLine();
+                break;
+
+
+                case "2":
                     Console.Clear();
                     consoleWriter.resetOptions();
                     consoleWriter.optionsWriter("download from website [stable]");
@@ -50,7 +59,7 @@ namespace CUT
                     }
                     break;
 
-                case "2":
+                case "3":
                     Console.Clear();
                     consoleWriter.resetOptions();
                     consoleWriter.optionsWriter("download from website [stable]");
@@ -70,7 +79,7 @@ namespace CUT
                     }
                     break;
 
-                case "3":
+                case "4":
                     Console.Clear();
                     consoleWriter.resetOptions();
                     consoleWriter.optionsWriter("download from website [stable]");
@@ -90,7 +99,7 @@ namespace CUT
                     }
                     break;
 
-                case "4":
+                case "5":
                     Console.Clear();
                     consoleWriter.resetOptions();
                     consoleWriter.optionsWriter("download from website [stable]");
@@ -110,11 +119,11 @@ namespace CUT
                     }
                     break;
 
-                case "5":
+                case "6":
                    Environment.Exit(0);
                 break;
             }
-            if (input != "1" || input != "2" || input != "3" || input != "4" || input != "5")
+            if (input != "1" || input != "2" || input != "3" || input != "4" || input != "5" || input != "6")
             {
                 consoleWriter.resetOptions(); //reset the int varaible
                 Options();
