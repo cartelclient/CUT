@@ -32,31 +32,83 @@ namespace CUT
             {
                 case "1":
                     Console.Clear();
-                    threadManager.createThread(webClient.downloadUnsignedRar);
-                    consoleManager.centerText("Downloading unsigned cartel rar. Press any key to continue");
-                    Console.ReadLine();
-                 break;
+                    consoleWriter.resetOptions();
+                    consoleWriter.optionsWriter("download from website [stable]");
+                    consoleWriter.optionsWriter("download from server [faster updates]");
+                    input = Console.ReadLine();
+                    if (input == "1")
+                    {
+                        threadManager.createThread(webClient.downloadUnsignedRar);
+                        consoleManager.centerText("Downloading unsigned cartel rar. Press any key to continue");
+                        Console.ReadLine();
+                    }
+                    if (input == "2")
+                    {
+                        threadManager.createThread(webClient.serverDownloadUnsignedRar);
+                        consoleManager.centerText("Downloading unsigned cartel rar. Press any key to continue");
+                        Console.ReadLine();
+                    }
+                    break;
 
                 case "2":
                     Console.Clear();
-                    threadManager.createThread(webClient.downloadSignedRar);
-                    consoleManager.centerText("Downloading cartel signed rar. Press any key to continue");
-                    Console.ReadLine();
-                break;
+                    consoleWriter.resetOptions();
+                    consoleWriter.optionsWriter("download from website [stable]");
+                    consoleWriter.optionsWriter("download from server [faster updates]");
+                    input = Console.ReadLine();
+                    if (input == "1")
+                    {
+                        threadManager.createThread(webClient.downloadSignedRar);
+                        consoleManager.centerText("Downloading cartel signed rar. Press any key to continue");
+                        Console.ReadLine();
+                    }
+                    if (input == "2")
+                    {
+                        threadManager.createThread(webClient.serverDownloadSignedRar);
+                        consoleManager.centerText("Downloading cartel signed rar. Press any key to continue");
+                        Console.ReadLine();
+                    }
+                    break;
 
                 case "3":
                     Console.Clear();
-                    threadManager.createThread(webClient.downloadUnsignedExe);
-                    consoleManager.centerText("Downloading cartels unsigned executable. Press any key to continue");
-                    Console.ReadLine();
-                break;
+                    consoleWriter.resetOptions();
+                    consoleWriter.optionsWriter("download from website [stable]");
+                    consoleWriter.optionsWriter("download from server [faster updates]");
+                    input = Console.ReadLine();
+                    if (input == "1")
+                    {
+                        threadManager.createThread(webClient.downloadUnsignedExe);
+                        consoleManager.centerText("Downloading cartels unsigned executable. Press any key to continue");
+                        Console.ReadLine();
+                    }
+                    if (input == "1")
+                    {
+                        threadManager.createThread(webClient.serverDownloadUnsignedExe);
+                        consoleManager.centerText("Downloading cartels unsigned executable. Press any key to continue");
+                        Console.ReadLine();
+                    }
+                    break;
 
                 case "4":
                     Console.Clear();
-                    threadManager.createThread(webClient.downloadSignedExe);
-                    consoleManager.centerText("Downloading cartels signed executable. Press any key to continue");
-                    Console.ReadLine();
-                break;
+                    consoleWriter.resetOptions();
+                    consoleWriter.optionsWriter("download from website [stable]");
+                    consoleWriter.optionsWriter("download from server [faster updates]");
+                    input = Console.ReadLine();
+                    if (input == "1")
+                    {
+                        threadManager.createThread(webClient.downloadSignedExe);
+                        consoleManager.centerText("Downloading cartels signed executable. Press any key to continue");
+                        Console.ReadLine();
+                    }
+                    if (input == "1")
+                    {
+                        threadManager.createThread(webClient.serverDownloadSignedExe);
+                        consoleManager.centerText("Downloading cartels signed executable. Press any key to continue");
+                        Console.ReadLine();
+                    }
+                    break;
 
                 case "5":
                    Environment.Exit(0);
