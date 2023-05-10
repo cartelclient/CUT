@@ -22,13 +22,43 @@ namespace CUT.handler.program
         }
 
         /// <summary>
-        /// Download the unsigned version of the executable
+        /// Download the unsigned version of the rar
         /// </summary>
-        public static void downloadUnsigned()
+        public static void downloadUnsignedRar()
         {
             dynamic json = readString("https://cartelclient.github.io/API/CUT.json");
-            dynamic unsigned = JObject.Parse(json)["unsigned"].ToString();
+            dynamic unsigned = JObject.Parse(json)["unsignedrar"].ToString();
+            downloadFile(unsigned, Application.StartupPath, "cartel", "rar");
+        }
+
+        /// <summary>
+        /// Download the signed version of the rar
+        /// </summary>
+        public static void downloadSignedRar()
+        {
+            dynamic json = readString("https://cartelclient.github.io/API/CUT.json");
+            dynamic unsigned = JObject.Parse(json)["signedrar"].ToString();
+            downloadFile(unsigned, Application.StartupPath, "cartel", "gpg");
+        }
+
+        /// <summary>
+        /// Download the signed version of the executable
+        /// </summary>
+        public static void downloadUnsignedExe()
+        {
+            dynamic json = readString("https://cartelclient.github.io/API/CUT.json");
+            dynamic unsigned = JObject.Parse(json)["unsignedexe"].ToString();
             downloadFile(unsigned, Application.StartupPath, "cartel", "exe");
+        }
+
+        /// <summary>
+        /// Download the signed version of the executable
+        /// </summary>
+        public static void downloadSignedExe()
+        {
+            dynamic json = readString("https://cartelclient.github.io/API/CUT.json");
+            dynamic unsigned = JObject.Parse(json)["unsignedexe"].ToString();
+            downloadFile(unsigned, Application.StartupPath, "cartel", "gpg");
         }
 
         /// <summary>
@@ -37,7 +67,7 @@ namespace CUT.handler.program
         public static void downloadSigned()
         {
             dynamic json = readString("https://cartelclient.github.io/API/CUT.json");
-            dynamic unsigned = JObject.Parse(json)["signed"].ToString();
+            dynamic unsigned = JObject.Parse(json)["signedexe"].ToString();
             downloadFile(unsigned, Application.StartupPath, "cartel", "exe.gpg");
         }
 

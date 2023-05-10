@@ -22,56 +22,47 @@ namespace CUT
             consoleWriter.writeLogo();
             Console.WriteLine("");
 
-            consoleWriter.optionsWriter("Update cartel (unsigned)");
-            consoleWriter.optionsWriter("Update cartel (signed)");
-            consoleWriter.optionsWriter("Repair cartel");
+            consoleWriter.optionsWriter("Download cartel (rar)");
+            consoleWriter.optionsWriter("Download cartel (signed rar)");
+            consoleWriter.optionsWriter("Download cartel (executable only)");
+            consoleWriter.optionsWriter("Download cartel (signed executable)");
             consoleWriter.optionsWriter("Exit");
             var input = Console.ReadLine();
             switch (input)
             {
                 case "1":
                     Console.Clear();
-                    if (fstream.fileExists(Application.StartupPath + @"/cartel.exe"))
-                    {
-                        fstream.deleteFile(Application.StartupPath + @"/cartel.exe"); // delete old versions
-                        threadManager.createThread(webClient.downloadUnsigned); // download new version
-                        consoleManager.centerText("Found cartel. Updating file. Press any key to continue");
-                        Console.ReadLine();
-                        consoleWriter.resetOptions(); //reset the int varaible
-                    }
-                    else
-                    {
-                        consoleManager.centerText("Make sure cartel.exe is in the same folder. Press any key to continue");
-                        Console.ReadLine();
-                        consoleWriter.resetOptions(); //reset the int varaible
-                        Options();
-                    }
-                break;
+                    threadManager.createThread(webClient.downloadUnsignedRar);
+                    consoleManager.centerText("Downloading unsigned cartel rar. Press any key to continue");
+                    Console.ReadLine();
+                 break;
 
                 case "2":
                     Console.Clear();
-                    if (fstream.fileExists(Application.StartupPath + @"/cartel.exe"))
-                    {
-                        fstream.deleteFile(Application.StartupPath + @"/cartel.exe"); // delete old versions
-                        threadManager.createThread(webClient.downloadSigned); // download new version
-                        consoleManager.centerText("Found cartel. Updating file. Press any key to continue");
-                        Console.ReadLine();
-                        consoleWriter.resetOptions(); //reset the int varaible
-                    }
-                    else
-                    {
-                        consoleManager.centerText("Make sure cartel.exe is in the same folder. Press any key to continue");
-                        Console.ReadLine();
-                        consoleWriter.resetOptions(); //reset the int varaible
-                        Options();
-                    }
-                    break;
+                    threadManager.createThread(webClient.downloadSignedRar);
+                    consoleManager.centerText("Downloading cartel signed rar. Press any key to continue");
+                    Console.ReadLine();
+                break;
 
                 case "3":
-                    Environment.Exit(0);
+                    Console.Clear();
+                    threadManager.createThread(webClient.downloadUnsignedExe);
+                    consoleManager.centerText("Downloading cartels unsigned executable. Press any key to continue");
+                    Console.ReadLine();
+                break;
+
+                case "4":
+                    Console.Clear();
+                    threadManager.createThread(webClient.downloadSignedExe);
+                    consoleManager.centerText("Downloading cartels signed executable. Press any key to continue");
+                    Console.ReadLine();
+                break;
+
+                case "5":
+                   Environment.Exit(0);
                 break;
             }
-            if (input != "1" || input != "2" || input != "3")
+            if (input != "1" || input != "2" || input != "3" || input != "4" || input != "5")
             {
                 consoleWriter.resetOptions(); //reset the int varaible
                 Options();
